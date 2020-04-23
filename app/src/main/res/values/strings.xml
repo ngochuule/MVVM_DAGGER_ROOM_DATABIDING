@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVVMApplication</string>
+    <string name="notifi_value">show notification ....</string>
+</resources>

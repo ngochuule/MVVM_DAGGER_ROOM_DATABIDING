@@ -1,0 +1,75 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- active thumb & track color -->
+        <item name="colorControlActivated">@color/colorPrimary</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/colorPrimary</item>
+
+        <!-- inactive track color -->
+        <item name="android:colorForeground">@color/colorPrimary</item>
+    </style>
+
+
+    <style name="AppTheme.TransparentActivity" parent="@android:style/Theme.Translucent" >
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="AppTheme.Translucent" parent="AppTheme.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.DayNight.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.DayNight" />
+
+    <style name="AppTheme.DialogTitle" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- alert dialog style -->
+    <style name="AppTheme.AlertDialog" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/black</item>
+
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/black</item>
+
+        <!-- Used for the background -->
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <!-- notification style -->
+    <style name="AppTheme.Notification" parent="Theme.AppCompat.DayNight.DarkActionBar" />
+    <style name="AppTheme.Notification.TextAppearance" parent="AppTheme.Notification">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="AppTheme.Notification.TextAppearance.Small" parent="AppTheme.Notification.TextAppearance">
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+    <style name="AppTheme.Notification.TextAppearance.Normal" parent="AppTheme.Notification.TextAppearance">
+        <item name="android:textSize">@dimen/text_size_norm</item>
+    </style>
+    <style name="AppTheme.Notification.TextAppearance.Huge" parent="AppTheme.Notification.TextAppearance">
+        <item name="android:textSize">@dimen/text_size_huge</item>
+    </style>
+
+</resources>
