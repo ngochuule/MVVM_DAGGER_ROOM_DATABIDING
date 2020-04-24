@@ -9,7 +9,7 @@ import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 @Module
-class AppModule {
+open class AppModule {
     @Singleton
     @Provides
     open fun provideRepository(app: MyApplication): AppRepository = AppRepositoryImpl.getInstance(

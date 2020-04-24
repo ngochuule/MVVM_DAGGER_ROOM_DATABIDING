@@ -2,11 +2,21 @@ package com.example.mvvmApp.data.provider
 
 import android.content.ContentProvider
 import android.content.ContentValues
+import android.content.res.Configuration
 import android.database.Cursor
 import android.net.Uri
 import com.example.mvvmApp.MyApplication
+import com.example.mvvmApp.data.preferences.AppPreferences
+import com.example.mvvmApp.data.repository.AppRepository
+import javax.inject.Inject
 
 class AppContentProvider : ContentProvider(){
+
+    @Inject
+    lateinit var appRepository: AppRepository
+
+    private lateinit var appPreferences: AppPreferences
+
     override fun insert(uri: Uri, values: ContentValues?): Uri? {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }

@@ -1,6 +1,7 @@
 package com.example.mvvmApp.data.datasource.local
 
 import com.example.mvvmApp.MyApplication
+import com.example.mvvmApp.data.datasource.appinfo.AppInfoImpl
 import com.example.mvvmApp.data.datasource.db.Table1App
 import com.example.mvvmApp.data.preferences.AppPreferences
 import com.example.mvvmApp.data.preferences.AppPreferencesImpl
@@ -17,6 +18,7 @@ class LocalDataSourceImpl private constructor(
     private val appDb = AppDatabase.getInstance(app)
     override val appPreferences: AppPreferences
         get() = AppPreferencesImpl.getInstance(app)
+    override val appInfo = AppInfoImpl.getInstance(app)
 
     override fun getAllTableApps(): List<Table1App> {
        return appDb.appsDao().getAll()

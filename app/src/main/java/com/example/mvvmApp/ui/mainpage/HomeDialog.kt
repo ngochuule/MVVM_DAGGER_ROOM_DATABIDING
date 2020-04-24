@@ -11,7 +11,7 @@ class HomeDialog : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {
-            val viewModel = (it as HomeAcitivity).obtainViewModel()
+            val viewModel = (it as HomeActivity).obtainViewModel()
             val itemIndex = arguments!!.getInt(ARG_ITEM_INDEX)
             return AlertDialog.Builder(it, R.style.AppTheme_AlertDialog)
                 .setMessage("Message dialog")
@@ -29,7 +29,7 @@ class HomeDialog : DialogFragment() {
 
     override fun onCancel(dialog: DialogInterface) {
         activity?.also {
-            val viewModel = (it as HomeAcitivity).obtainViewModel()
+            val viewModel = (it as HomeActivity).obtainViewModel()
             val itemIndex = arguments!!.getInt(ARG_ITEM_INDEX)
             viewModel.onCancleSelectedIndex(itemIndex)
         }

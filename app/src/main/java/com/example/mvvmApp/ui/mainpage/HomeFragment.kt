@@ -17,7 +17,7 @@ class HomeFragment: BaseFragment() {
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        viewModel = (activity as HomeAcitivity).obtainViewModel()
+        viewModel = (activity as HomeActivity).obtainViewModel()
         viewDataBinding = FragmentHomeBinding.inflate(inflater, container, false)
         viewDataBinding.viewModel = viewModel
 
