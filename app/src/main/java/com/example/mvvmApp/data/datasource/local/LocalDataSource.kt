@@ -10,6 +10,6 @@ interface LocalDataSource {
 
     fun getAllTableApps(): List<Table1App>
     fun getTableById(tableId: String): Table1App?
-    fun insertTableAppIfNotExists(table: Table1App): Int
+    fun insertTableAppIfNotExists(table: Table1App): Long
     fun deleteTableApp(table: Table1App): Int
 }

@@ -20,20 +20,22 @@ class LocalDataSourceImpl private constructor(
         get() = AppPreferencesImpl.getInstance(app)
     override val appInfo = AppInfoImpl.getInstance(app)
 
+    init {
+        appPreferences.initIsFirstRun = false
+    }
+
     override fun getAllTableApps(): List<Table1App> {
        return appDb.appsDao().getAll()
     }
 
     override fun getTableById(tableId: String): Table1App? {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return appDb.appsDao().getById(tableId)
     }
 
-    override fun insertTableAppIfNotExists(table: Table1App): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun insertTableAppIfNotExists(table: Table1App) = appDb.appsDao().insertIfNotExists(table)
 
     override fun deleteTableApp(table: Table1App): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return appDb.appsDao().delete(table)
     }
 
     companion object {

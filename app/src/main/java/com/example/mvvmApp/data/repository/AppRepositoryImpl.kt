@@ -6,6 +6,8 @@ import com.example.mvvmApp.data.datasource.api.APIDataSource
 import com.example.mvvmApp.data.datasource.db.Table1App
 import com.example.mvvmApp.data.datasource.homepage.HomeDataSourceImpl
 import com.example.mvvmApp.data.datasource.local.LocalDataSource
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class AppRepositoryImpl private constructor(
     override val app: MyApplication,
@@ -16,7 +18,7 @@ class AppRepositoryImpl private constructor(
 
     init {
         // init data
-        localDataSource.appPreferences.initIsFirstRun = false
+//        localDataSource.appPreferences.initIsFirstRun = false
     }
 
     override val homePageRepository: HomePageRepository
@@ -24,22 +26,30 @@ class AppRepositoryImpl private constructor(
 
     override suspend fun getAllTable1(): List<Table1App> {
         // do nothing
-        return  ArrayList<Table1App>()
+        return withContext(Dispatchers.IO) {
+            localDataSource.getAllTableApps()
+        }
     }
 
     override suspend fun getTable1AppById(id: String): Table1App? {
         // do nothing
-        return null
+        return withContext(Dispatchers.IO) {
+            localDataSource.getTableById(id)
+        }
     }
 
-    override suspend fun insertTable1(data: Table1App): Int {
+    override suspend fun insertTable1(data: Table1App): Long {
         // do nothing
-        return 0
+        return withContext(Dispatchers.IO) {
+            localDataSource.insertTableAppIfNotExists(data)
+        }
     }
 
     override suspend fun deleteTable1(data: Table1App): Int {
         // do nothing
-        return 0
+        return withContext(Dispatchers.IO) {
+            localDataSource.deleteTableApp(data)
+        }
     }
 
     override suspend fun isExist(id: String): Boolean {

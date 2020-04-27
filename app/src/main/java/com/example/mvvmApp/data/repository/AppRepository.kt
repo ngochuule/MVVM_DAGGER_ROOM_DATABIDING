@@ -22,7 +22,7 @@ interface AppRepository {
 
     suspend fun  getTable1AppById(id: String): Table1App?
 
-    suspend fun insertTable1(data: Table1App): Int
+    suspend fun insertTable1(data: Table1App): Long
 
     suspend fun deleteTable1(data: Table1App) : Int
 
